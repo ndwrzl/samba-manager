@@ -1,0 +1,15 @@
+-- Your SQL goes here
+CREATE TABLE logs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  date BIGINT NOT NULL,
+  server_user VARCHAR(255) NOT NULL,
+  client_ip VARCHAR(40) NOT NULL,
+  client_name VARCHAR(255) NOT NULL,
+  share_name VARCHAR(255) NOT NULL,
+  action VARCHAR(100) NOT NULL,
+  ok BOOLEAN CHECK (ok IN (0, 1)),
+  permissions INTEGER DEFAULT 0,
+  data VARCHAR(255),
+  path VARCHAR(4095) NOT NULL,
+  path2 VARCHAR(4095)
+);

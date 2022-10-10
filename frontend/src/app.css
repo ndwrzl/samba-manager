@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--background-color: #1b1b1e;
+	--secondary: #292f3d;
+	--accent: #bfd7b5;
+	--error: #dd7373;
+	--accent-2: #c8b6e2;
+	--secondary-2: #7a86b6;
+	--secondary-3: #495c83;
+}
+
+body,
+html {
+	color: #efeffb;
+	background: var(--background-color);
+	height: 100%;
+	width: 100%;
+	max-height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
