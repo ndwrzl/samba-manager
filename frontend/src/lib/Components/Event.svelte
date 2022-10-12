@@ -51,7 +51,7 @@
 	.event {
 		background-color: var(--secondary);
 		border-left: 2px var(--accent) solid;
-		@apply w-full p-2 m-2 rounded-sm;
+		@apply p-2 m-2 rounded-sm;
 	}
 
 	svg {
