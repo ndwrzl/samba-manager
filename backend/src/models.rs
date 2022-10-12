@@ -19,7 +19,7 @@ pub struct Log {
     pub path2: Option<String>,
 }
 
-#[derive(Insertable, Serialize)]
+#[derive(Insertable, Serialize, Debug)]
 #[serde(crate = "rocket::serde")]
 #[table_name = "logs"]
 pub struct NewLog {

@@ -163,10 +163,9 @@ pub async fn add_line(conn: &MyConn, line: String) -> Result<Log, ReadLineError>
                         // .and(path2.eq(&parsed.path2))
                         .and(client_name.eq(&parsed.client_name))
                         .and(share_name.eq(&parsed.share_name))
-                        .and(action.eq(&parsed.action))
-                        // .and(ok.eq(&parsed.ok))
-                        // .and(permissions.eq(&parsed.permissions))
-                        .and(data.eq(&parsed.data)),
+                        .and(action.eq(&parsed.action)), // .and(ok.eq(&parsed.ok))
+                                                         // .and(permissions.eq(&parsed.permissions))
+                                                         // .and(data.eq(&parsed.data)),
                 )
                 .get_results::<Log>(c),
                 parsed,
@@ -176,18 +175,18 @@ pub async fn add_line(conn: &MyConn, line: String) -> Result<Log, ReadLineError>
 
     let found = match first {
         Ok(log) => log
-            .iter()
+            .into_iter()
             .map(|log| {
-                if &log.path2 == &parsed.path2
+                &log.path2 == &parsed.path2
                     || &log.ok == &parsed.ok
                     || &log.permissions == &parsed.permissions
-                {
-                    return true;
-                }
-                false
+                    || &log.data == &parsed.data
             })
             .any(|f| f == true),
-        Err(_) => false,
+        Err(e) => {
+            eprintln!("{}", e);
+            panic!();
+        }
     };
 
     match found {
