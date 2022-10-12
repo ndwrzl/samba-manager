@@ -9,5 +9,6 @@ frontend/package
 .env
 .env.*
 !.env.example
+!backend/.env
 .vercel
 .output
