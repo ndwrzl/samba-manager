@@ -1,5 +1,4 @@
-backend/db.db*
-backend/db.sqlite*
+*.sqlite*
 backend/target
 
 .DS_Store
