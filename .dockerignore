@@ -1,0 +1,8 @@
+backend/database
+backend/sandbox
+backend/target
+
+frontend/.svelte-kit
+frontend/node_modules
+frontend/build
+frontend/.vscode

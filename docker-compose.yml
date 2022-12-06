@@ -1,20 +1,20 @@
 version: "3.9"
 
 services:
-  sambalogviewer:
-    build: .
-    environment:
-      LOG_FILE: /var/log/samba/audit.log
-      LOGIN_USER: admin
-      LOGIN_PASSWORD: admin
-      API_KEY: test
-      DATABASE_URL: ./database/db.sqlite
-      ROCKET_SECRET_KEY: secret_key_here
-    volumes:
-      - database:/app/backend/database
-      - ./audit:/var/log/samba/
-    ports:
-      - "8000:80/tcp"
+   sambalogviewer:
+      build: .
+      environment:
+         LOG_FILE: /var/log/samba/audit.log
+         LOGIN_USER: admin
+         LOGIN_PASSWORD: admin
+         API_KEY: test
+         DATABASE_URL: ./database/db.sqlite
+         ROCKET_SECRET_KEY: secret_key_here
+      volumes:
+         - database:/app/backend/database
+         - /var/log/samba:/var/log/samba
+      ports:
+         - "8000:80/tcp"
 
 volumes:
-  database:
+   database:
