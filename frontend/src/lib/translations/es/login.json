@@ -1,8 +1,0 @@
-{
-	"title": "Iniciar Sesión",
-	"username": "Nombre de usuario",
-	"password": "Contraseña",
-	"invalidCredentials": "Credenciales invalidas.",
-	"unknownError": "Error desconocido.",
-	"login": "Iniciar Sesión"
-}

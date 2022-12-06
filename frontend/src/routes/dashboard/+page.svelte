@@ -14,7 +14,7 @@
 {#if $state.connected && $state.loggedIn}
 	<FilterPicker />
 	<div class="mx-2 md:mx-16 xl:mx-24">
-		<h1 class="text-lg font-bold">{$t('dashboard.logs')}</h1>
+		<h1 class="text-lg font-bold">{$t('l.logs')}</h1>
 		<div class="flex-auto overflow-y-auto">
 			{#each $logs as event}
 				<Event {event} />

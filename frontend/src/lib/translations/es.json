@@ -1,0 +1,17 @@
+{
+	"action": "Acción",
+	"client_ip": "IP del cliente",
+	"client_name": "Nombre de cliente",
+	"invalidCredentials": "Credenciales invalidas.",
+	"language": "Lenguaje",
+	"login": "Iniciar Sesión",
+	"logout": "Cerrar sesión",
+	"logs": "Registro",
+	"password": "Contraseña",
+	"search": "Buscar",
+	"share_name": "Nombre de carpeta",
+	"title": "Iniciar Sesión",
+	"unknownError": "Error desconocido.",
+	"username": "Nombre de usuario",
+	"madeby": "Hecho por Ander López"
+}

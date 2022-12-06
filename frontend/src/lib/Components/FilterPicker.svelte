@@ -37,34 +37,34 @@
 
 <div class="filters flex justify-center my-5 flex-wrap">
 	<select bind:value={$filters.share_name}>
-		<option value={-1}>{$t('dashboard.share_name')}</option>
+		<option value={-1}>{$t('l.share_name')}</option>
 		{#each $filterData.share_name as filter, i}
 			<option value={i}>{filter}</option>
 		{/each}
 	</select>
 
 	<select bind:value={$filters.client_name}>
-		<option value={-1}>{$t('dashboard.client_name')}</option>
+		<option value={-1}>{$t('l.client_name')}</option>
 		{#each $filterData.client_name as filter, i}
 			<option value={i}>{filter}</option>
 		{/each}
 	</select>
 
 	<select bind:value={$filters.client_ip}>
-		<option value={-1}>{$t('dashboard.client_ip')}</option>
+		<option value={-1}>{$t('l.client_ip')}</option>
 		{#each $filterData.client_ip as filter, i}
 			<option value={i}>{filter}</option>
 		{/each}
 	</select>
 
 	<select bind:value={$filters.actions}>
-		<option value={-1}>{$t('dashboard.action')}</option>
+		<option value={-1}>{$t('l.action')}</option>
 		{#each $filterData.actions as filter, i}
 			<option value={i}>{filter}</option>
 		{/each}
 	</select>
 
-	<input type="text" placeholder={$t('dashboard.search')} bind:value={$filters.search} />
+	<input type="text" placeholder={$t('l.search')} bind:value={$filters.search} />
 </div>
 
 <style lang="scss">

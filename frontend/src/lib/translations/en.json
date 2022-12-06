@@ -1,0 +1,17 @@
+{
+	"action": "Action",
+	"client_ip": "Client IP",
+	"client_name": "Client name",
+	"invalidCredentials": "Invalid credentials.",
+	"language": "Language",
+	"login": "Login",
+	"logout": "Logout",
+	"logs": "Log",
+	"password": "Password",
+	"search": "Search",
+	"share_name": "Folder name",
+	"title": "Login",
+	"unknownError": "Unknown error.",
+	"username": "Username",
+	"madeby": "Made by Ander López"
+}

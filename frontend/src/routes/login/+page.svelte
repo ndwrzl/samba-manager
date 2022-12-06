@@ -48,7 +48,7 @@
 </script>
 
 <svelte:head>
-	<title>{$t('login.title')} - Samba Dashboard</title>
+	<title>{$t('l.title')} - Samba Dashboard</title>
 	<meta name="description" content="Samba Dashboard" />
 </svelte:head>
 
@@ -63,8 +63,6 @@
 			{/each}
 		</select>
 		<form on:submit|preventDefault={submit} class="flex flex-col ">
-			<p class="text-lg font-bold mb-4">Samba manager</p>
-
 			{#if error}
 				<div
 					transition:scale
@@ -73,30 +71,33 @@
 				>
 					<strong class="font-bold">
 						{#if error instanceof NotLoggedIn}
-							{$t('login.invalidCredentials')}
+							{$t('l.invalidCredentials')}
 						{:else}
-							{$t('login.unknownError')}
+							{$t('l.unknownError')}
 						{/if}
 					</strong>
 				</div>
 			{/if}
+			<p class="text-lg font-bold mb-4">Samba manager</p>
 
 			<label class="block">
-				<span class="block text-sm font-medium">{$t('login.username')}</span>
+				<span class="block text-sm font-medium">{$t('l.username')}</span>
 				<input use:focus bind:value={username} type="text" disabled={blocked} />
 			</label>
 			<label class="block">
-				<span class="block text-sm font-medium">{$t('login.password')}</span>
+				<span class="block text-sm font-medium">{$t('l.password')}</span>
 				<input bind:value={password} type="password" disabled={blocked} />
 			</label>
-			<button type="submit" disabled={blocked}>{$t('login.login')}</button>
+			<button type="submit" disabled={blocked}>{$t('l.login')}</button>
 		</form>
 	</div>
+
+	<footer>{$t('l.madeby')}</footer>
 </div>
 
 <style lang="scss">
 	.login {
-		@apply absolute h-screen w-screen flex justify-center items-center;
+		@apply absolute h-screen w-screen flex-col flex justify-center items-center;
 		.form {
 			background: var(--secondary);
 			@apply flex flex-col w-96 rounded p-4;

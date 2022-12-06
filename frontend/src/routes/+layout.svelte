@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
+	import {} from '$lib/translations';
 
 	$: {
 		if (!$state.needsLogin && $state.loggedIn && browser) {

@@ -4,7 +4,7 @@
 </script>
 
 <nav>
-	<p>SAMBA</p>
+	<p class="mx-5">SAMBA</p>
 	<div class="ml-auto">
 		<select
 			bind:value={$locale}
@@ -14,7 +14,7 @@
 				<option {value}>{$t(`lang.${value}`)}</option>
 			{/each}
 		</select>
-		<button on:click={logout}>{$t('common.logout')}</button>
+		<button on:click={logout}>{$t('l.logout')}</button>
 	</div>
 </nav>
 

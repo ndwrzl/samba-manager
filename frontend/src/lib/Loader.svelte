@@ -3,9 +3,10 @@
 	import { status } from '$lib/sse';
 	import { fade } from 'svelte/transition';
 	import { Chasing } from 'svelte-loading-spinners';
+	import { loading } from '$lib/translations';
 </script>
 
-{#if (!$state.needsLogin && (!$state.fetched || !$state.connected || !$state.gotFilters)) || $state.criticalError}
+{#if (!$state.needsLogin && (!$state.fetched || !$state.connected || !$state.gotFilters)) || $state.criticalError || $loading}
 	<div class="loader" out:fade={{ duration: 200 }}>
 		{#if $status.error || $state.criticalError}
 			<div class="error" role="alert">

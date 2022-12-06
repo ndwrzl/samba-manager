@@ -1,0 +1,17 @@
+{
+	"action": "Ekintza",
+	"client_ip": "Bezeroaren IPa",
+	"client_name": "Bezeroaren izena",
+	"invalidCredentials": "Kredentzial baliogabeak.",
+	"language": "Hizkuntza",
+	"login": "Hasi saioa",
+	"logout": "Saioa itxi",
+	"logs": "Erregistroa",
+	"password": "Pasahitza",
+	"search": "Bilatu",
+	"share_name": "Karpetaren izena",
+	"title": "Hasi saioa",
+	"unknownError": "Errore ezezaguna.",
+	"username": "Erabiltzaile izena",
+	"madeby": "Ander López egina"
+}
