@@ -1,80 +1,27 @@
-1662563830 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100080|file|open|/home/share/mine
-1662563830 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662563831 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662563832 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662563833 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662563834 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565163 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x16019f|file|create|/home/share/mine/New Text Document.txt
-1662565163 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565169 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|file|open|/home/share/mine/New Text Document.txt
-1662565169 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|renameat|ok|/home/share/mine/New Text Document.txt|/home/share/mine/lol.txt
-1662565169 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565189 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100080|file|open|/home/share/mine/lol.txt
-1662565189 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x80|file|open|/home/share/mine
-1662565190 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x80|file|open|/home/share/mine/lol.txt
-1662565192 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x120089|file|open|/home/share/mine/lol.txt
-1662565192 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x120089|file|open|/home/share/mine
-1662565192 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100088|file|open|/home/share/mine
-1662565194 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x120196|file|open_if|/home/share/mine/lol.txt
-1662565194 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100088|file|open|/home/share/mine/lol.txt
-1662565194 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x120089|file|open|/home/share/mine/lol.txt
-1662565195 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565223 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x80|file|open|/home/share/mine/lol.txt
-1662565223 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x120089|file|open|/home/share/mine/lol.txt
-1662565227 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|mkdirat|ok|/home/share/mine/New folder
-1662565227 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|dir|create|/home/share/mine/New folder
-1662565227 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x17019b|file|open|/home/share/mine/New folder
-1662565227 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565229 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x80|file|open|/home/share/mine
-1662565229 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|file|open|/home/share/mine/New folder
-1662565229 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|renameat|ok|/home/share/mine/New folder|/home/share/mine/carpeta
-1662565229 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565237 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|dir|open|/home/share/mine/carpeta
-1662565239 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100080|file|open|/home/share/mine/lol.txt
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|dir|open|/home/share/mine
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x120089|file|open|/home/share/mine
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x80|file|open|/home/share/mine/carpeta
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x20080|file|open|/home/share/mine/lol.txt
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|file|open|/home/share/mine/lol.txt
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|renameat|ok|/home/share/mine/lol.txt|/home/share/mine/carpeta/lol.txt
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x20080|file|open|/home/share/mine
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x20080|file|open|/home/share/mine/carpeta
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine/carpeta
-1662565240 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565241 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565248 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine/carpeta
-1662565250 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine/carpeta
-1662565250 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565251 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100080|file|open|/home/share/mine/carpeta/lol.txt
-1662565251 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x120089|file|open|/home/share/mine/carpeta/lol.txt
-1662565255 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565256 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|dir|open|/home/share/mine/carpeta
-1662565256 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine/carpeta
-1662565261 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100080|file|open|/home/share/mine
-1662565263 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine/carpeta
-1662565263 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x120089|file|open|/home/share/mine
-1662565263 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/carpeta
-1662565263 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x10080|file|open|/home/share/mine/carpeta/lol.txt
-1662565263 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|unlinkat|ok|/home/share/mine/carpeta/lol.txt
-1662565263 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|unlinkat|ok|/home/share/mine/carpeta
-1662565263 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100081|file|open|/home/share/mine
-1662565279 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x100080|file|open|/home/share/mine
-1662565264 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|unlinkat|ok|/home/share/mine/carpeta
-1663414300 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|renameat|ok|/home/share/mine/New Text Document.txt|/home/share/mine/lol.txt
-1663414301 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|renameat|ok|/home/share/mine/New Text Document.txt|/home/share/mine/lol.txt
-1663414302 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|renameat|ok|/home/share/mine/New Text Document.txt|/home/share/mine/lol.txt
-1663424196 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/carpeta
-1663424198 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/carpeta
-1663424199 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/carpeta
-1663424200 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/carpeta
-1663424201 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/carpeta
-1663424205 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/carpeta
-1663424210 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/carpeta
-1663424310 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/patata
-1663424312 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/testfile
-1663424312 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/joderr
-1663424312 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/joderrl
-1663424312 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/bruhfile
-1663424312 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/potatfile
-1663424312 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/crashfile
-1663424313 [SMB AUDIT] share|fe80::fd13:a866:9d0b:bfc9|pc-name|Share|create_file|ok|0x110080|dir|open|/home/share/mine/crashfile
+2022-12-05T20:40:39.594690+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|connect|ok|shareadmin
+2022-12-05T20:40:39.595809+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100080|file|open|/srv/share
+2022-12-05T20:40:39.611319+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|file|open|/srv/share
+2022-12-05T20:40:43.098786+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|dir|open|/srv/share/asd
+2022-12-05T20:40:43.325230+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|file|open|/srv/share
+2022-12-05T20:40:48.554810+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x120089|file|open|/srv/share
+2022-12-05T20:40:48.560069+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x20080|file|open|/srv/share/aa.zip
+2022-12-05T20:40:48.562120+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x110080|file|open|/srv/share/aa.zip
+2022-12-05T20:40:48.564001+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|renameat|ok|/srv/share/aa.zip|/srv/share/asd/aa.zip
+2022-12-05T20:40:48.566070+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x20080|file|open|/srv/share
+2022-12-05T20:40:48.567614+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x20080|file|open|/srv/share/asd
+2022-12-05T20:40:48.569999+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|file|open|/srv/share/asd
+2022-12-05T20:40:48.573668+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|file|open|/srv/share
+2022-12-05T20:40:48.578686+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|file|open|/srv/share
+2022-12-05T20:41:01.522762+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100080|file|open|/srv/share
+2022-12-05T20:41:04.826818+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x16019f|file|create|/srv/share/New Text Document.txt
+2022-12-05T20:41:04.834907+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|file|open|/srv/share
+2022-12-05T20:41:07.805533+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x80|file|open|/srv/share
+2022-12-05T20:41:07.807445+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x110080|file|open|/srv/share/New Text Document.txt
+2022-12-05T20:41:07.809008+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|renameat|ok|/srv/share/New Text Document.txt|/srv/share/test.log
+2022-12-05T20:41:07.814508+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|file|open|/srv/share
+2022-12-05T20:41:07.821221+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100081|file|open|/srv/share
+2022-12-05T20:41:09.892144+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x120089|file|open|/srv/share/test.log
+2022-12-05T20:41:09.903587+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x120089|file|open|/srv/share
+2022-12-05T20:41:09.909570+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x100088|file|open|/srv/share
+2022-12-05T20:41:09.978791+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x120089|file|open|/srv/share/test.log
+2022-12-05T20:41:11.227456+00:00 [SMB AUDIT] shareadmin|192.168.1.69|pc-name|shareadmin|create_file|ok|0x120196|file|open_if|/srv/share/test.log
