@@ -12,3 +12,5 @@ frontend/package
 !backend/.env
 .vercel
 .output
+
+frontendold
