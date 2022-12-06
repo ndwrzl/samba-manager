@@ -39,7 +39,7 @@ pub async fn monitor(file: PathBuf, conn: MyConn, channel: Sender<Log>) {
             .await
             .expect("child process encountered an error");
 
-        println!("tail status was: {}", status);
+        println!("tail status was: {status}");
         panic!("Tail died");
     });
 

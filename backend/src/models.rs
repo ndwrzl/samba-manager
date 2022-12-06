@@ -1,4 +1,5 @@
 use crate::schema::logs;
+
 use diesel::{Insertable, Queryable};
 use rocket::serde::Serialize;
 
