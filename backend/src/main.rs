@@ -54,15 +54,16 @@ async fn run_migrations(rocket: Rocket<Build>) -> fairing::Result {
     .await
 }
 
-#[post("/log?<count>&<before>&<after>&<share>&<client>&<actions>&<search>")]
+#[post("/log?<count>&<before>&<after>&<share_name>&<client_name>&<client_ip>&<actions>&<search>")]
 pub async fn getlog(
     _admin: Admin,
     conn: MyConn,
     count: Option<i64>,
     before: Option<i64>,
     after: Option<i64>,
-    share: Option<String>,
-    client: Option<String>,
+    share_name: Option<String>,
+    client_name: Option<String>,
+    client_ip: Option<String>,
     actions: Option<String>,
     search: Option<String>,
 ) -> Json<Vec<Log>> {
@@ -71,8 +72,9 @@ pub async fn getlog(
         count.unwrap_or(50),
         before,
         after,
-        client,
-        share,
+        client_name,
+        client_ip,
+        share_name,
         actions,
     )
     .await;
@@ -84,15 +86,15 @@ pub async fn getlog(
             .cloned()
             .filter(|log| {
                 let mut score = [0, 0];
-                match matcher.fuzzy_match(log.path.as_str(), &search) {
-                    Some(scor) => score[0] = scor,
-                    None => (),
+                if let Some(scor) = matcher.fuzzy_match(log.path.as_str(), &search) {
+                    score[0] = scor
                 };
                 match &log.path2 {
-                    Some(path) => match matcher.fuzzy_match(path.as_str(), &search) {
-                        Some(scor) => score[1] = scor,
-                        None => (),
-                    },
+                    Some(path) => {
+                        if let Some(scor) = matcher.fuzzy_match(path.as_str(), &search) {
+                            score[1] = scor
+                        }
+                    }
                     None => (),
                 }
                 score.iter().any(|score| score > &30)

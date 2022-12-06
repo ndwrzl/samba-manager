@@ -3,6 +3,7 @@ use crate::diesel::ExpressionMethods;
 use crate::models::{Log, NewLog};
 use crate::schema::logs::dsl::*;
 use crate::MyConn;
+use chrono::DateTime;
 use diesel::insert_into;
 use diesel::{QueryDsl, RunQueryDsl};
 use lazy_static::lazy_static;
@@ -10,13 +11,13 @@ use regex::Regex;
 use rocket::serde::Serialize;
 
 const PARSE_STRING: &str = r"(?x)
-    ^(?P<date>\d+)\s\[SMB\sAUDIT]\s
+    ^(?P<date>[^\s]+?)\s\[SMB\sAUDIT]\s
     (?P<server_user>\w+)\|
     (?P<client_ip>.+?)\|
     (?P<client_name>.+?)\|
     (?P<share_name>.+?)\|
     (?P<action>.+?)\|
-    ((?P<ok>ok)\|)?
+    ((?P<ok>ok)\|)?\|?
     ((?P<permissions>0x\w+)\|)?
     ((?P<extra>[^/]+?)\|)?
     (?P<path>(/[^\|]+))
@@ -33,31 +34,30 @@ macro_rules! unwrap_or_err {
     };
 }
 
-pub fn parse_line(line: &String) -> Result<NewLog, String> {
+pub fn parse_line(line: &str) -> Result<NewLog, String> {
     lazy_static! {
         pub static ref PARSE_REGEX: Regex = regex::Regex::new(PARSE_STRING).unwrap();
     }
-    let parsed = match PARSE_REGEX.captures(&line) {
+    let parsed = match PARSE_REGEX.captures(line) {
         Some(parsed) => parsed,
         None => return Err("Regex doesn't match".to_owned()),
     };
 
-    let get_str = |name: &'static str| match parsed.name(name) {
-        None => None,
-        Some(reg) => Some(reg.as_str().to_owned()),
+    let get_str = |name: &'static str| parsed.name(name).map(|reg| reg.as_str().to_owned());
+
+    let parsed_date = match DateTime::parse_from_rfc3339(unwrap_or_err!(get_str("date")).as_str()) {
+        Ok(time) => time,
+        Err(err) => return Err(format!("Invalid RFC3339 Date. {err}")),
     };
 
     Ok(NewLog {
-        date: unwrap_or_err!(get_str("date")).parse::<i64>().unwrap(),
+        date: parsed_date.timestamp(),
         server_user: unwrap_or_err!(get_str("server_user")),
         client_ip: unwrap_or_err!(get_str("client_ip")),
         client_name: unwrap_or_err!(get_str("client_name")),
         share_name: unwrap_or_err!(get_str("share_name")),
         action: unwrap_or_err!(get_str("action")),
-        ok: match get_str("ok") {
-            Some(reg) => Some(reg == "ok"),
-            None => None,
-        },
+        ok: get_str("ok").map(|reg| reg == "ok"),
         permissions: match get_str("permissions") {
             Some(reg) => match i32::from_str_radix(&reg[2..], 16) {
                 Ok(e) => Some(e),
@@ -112,31 +112,36 @@ pub async fn get_logs(
     count: i64,
     before: Option<i64>,
     after: Option<i64>,
-    client: Option<String>,
+    clientname: Option<String>,
+    clientip: Option<String>,
     share: Option<String>,
     actions: Option<String>,
 ) -> Vec<Log> {
     conn.run(move |c| {
         let mut query = logs.order(id.desc()).limit(count).into_boxed();
 
-        if before.is_some() {
-            query = query.filter(date.le(before.unwrap()));
+        if let Some(before) = before {
+            query = query.filter(date.le(before));
         }
 
-        if after.is_some() {
-            query = query.filter(date.ge(after.unwrap()));
+        if let Some(after) = after {
+            query = query.filter(date.ge(after));
         }
 
-        if client.is_some() {
-            query = query.filter(client_name.eq(client.unwrap()));
+        if let Some(client) = clientname {
+            query = query.filter(client_name.eq(client));
         }
 
-        if share.is_some() {
-            query = query.filter(share_name.eq(share.unwrap()));
+        if let Some(client) = clientip {
+            query = query.filter(client_ip.eq(client));
         }
 
-        if actions.is_some() {
-            query = query.filter(action.eq(actions.unwrap()));
+        if let Some(share) = share {
+            query = query.filter(share_name.eq(share));
+        }
+
+        if let Some(actions) = actions {
+            query = query.filter(action.eq(actions));
         }
 
         query.load::<Log>(c).expect("Error loading logs")
@@ -163,9 +168,10 @@ pub async fn add_line(conn: &MyConn, line: String) -> Result<Log, ReadLineError>
                         // .and(path2.eq(&parsed.path2))
                         .and(client_name.eq(&parsed.client_name))
                         .and(share_name.eq(&parsed.share_name))
-                        .and(action.eq(&parsed.action)), // .and(ok.eq(&parsed.ok))
-                                                         // .and(permissions.eq(&parsed.permissions))
-                                                         // .and(data.eq(&parsed.data)),
+                        .and(action.eq(&parsed.action)),
+                    // .and(ok.eq(&parsed.ok))
+                    // .and(permissions.eq(&parsed.permissions))
+                    // .and(data.eq(&parsed.data)),
                 )
                 .get_results::<Log>(c),
                 parsed,
@@ -177,14 +183,14 @@ pub async fn add_line(conn: &MyConn, line: String) -> Result<Log, ReadLineError>
         Ok(log) => log
             .into_iter()
             .map(|log| {
-                &log.path2 == &parsed.path2
-                    || &log.ok == &parsed.ok
-                    || &log.permissions == &parsed.permissions
-                    || &log.data == &parsed.data
+                log.path2 == parsed.path2
+                    || log.ok == parsed.ok
+                    || log.permissions == parsed.permissions
+                    || log.data == parsed.data
             })
-            .any(|f| f == true),
+            .any(|f| f),
         Err(e) => {
-            eprintln!("{}", e);
+            eprintln!("{e}");
             panic!();
         }
     };
