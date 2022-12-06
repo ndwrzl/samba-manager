@@ -1,17 +1,28 @@
-import { loadLogs, addLog, LogSchema, type Log, filterSchema, filters } from '$lib/logStore';
+import { loadLogs, LogSchema, filterSchema, filters } from '$lib/logStore';
 import { checkLogin, criticalError } from '$lib/state';
 
 import { z } from 'zod';
 
+export class NotLoggedIn extends Error {
+	res: Response;
+	constructor(res: Response) {
+		super('Authentication error');
+		this.res = res;
+
+		// Set the prototype explicitly.
+		Object.setPrototypeOf(this, NotLoggedIn.prototype);
+	}
+}
+
 function api(path: string, options: RequestInit | undefined = undefined) {
-	let req = fetch(path, options).then(async (res) => {
+	const req = fetch(path, options).then(async (res) => {
 		if (res.ok) {
 			return res;
 		}
 
 		if (res.status === 401 || res.status === 403) {
 			if (!(await checkLogin())) {
-				throw new Error('Not logged in API error\n' + (await res.text()));
+				throw new NotLoggedIn(res);
 			}
 		}
 
@@ -25,7 +36,7 @@ function api(path: string, options: RequestInit | undefined = undefined) {
 }
 
 export async function login(username: string, password: string) {
-	let req = await api('/api/login', {
+	const req = await api('/api/login', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -51,16 +62,16 @@ interface Filters {
 }
 
 export async function getLog(filters: Filters) {
-	let params = new URLSearchParams();
+	const params = new URLSearchParams();
 	for (const [key, value] of Object.entries(filters)) {
 		if (value !== -1 && value !== undefined && value !== '') {
 			params.set(key, value);
 		}
 	}
 
-	let req = await api('/api/log?' + params, { method: 'POST' });
+	const req = await api('/api/log?' + params, { method: 'POST' });
 	if (req.ok) {
-		let result = z.array(LogSchema).safeParse(await req.json());
+		const result = z.array(LogSchema).safeParse(await req.json());
 
 		if (result.success) {
 			loadLogs(result.data);
@@ -76,12 +87,12 @@ export async function getLog(filters: Filters) {
 }
 
 export async function getLatestLogs() {
-	let req = await api('/api/log', {
+	const req = await api('/api/log', {
 		method: 'POST'
 	});
 
 	if (req.ok) {
-		let result = z.array(LogSchema).safeParse(await req.json());
+		const result = z.array(LogSchema).safeParse(await req.json());
 
 		if (result.success) {
 			loadLogs(result.data);
@@ -94,9 +105,9 @@ export async function getLatestLogs() {
 }
 
 export async function getFilters() {
-	let req = await api('/api/filters', { method: 'POST' });
+	const req = await api('/api/filters', { method: 'POST' });
 	if (req.ok) {
-		let result = filterSchema.safeParse(await req.json());
+		const result = filterSchema.safeParse(await req.json());
 
 		if (result.success) {
 			filters.set({
@@ -116,7 +127,7 @@ export async function getFilters() {
 }
 
 export async function logout() {
-	let req = await api('/api/logout', {
+	const req = await api('/api/logout', {
 		method: 'POST'
 	});
 	if (req.ok) {
