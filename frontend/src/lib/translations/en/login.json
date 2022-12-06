@@ -1,0 +1,8 @@
+{
+	"title": "Login",
+	"username": "Username",
+	"password": "Password",
+	"invalidCredentials": "Invalid credentials.",
+	"unknownError": "Unknown error.",
+	"login": "Login"
+}

@@ -1,0 +1,8 @@
+{
+	"logs": "Registro",
+	"share_name": "Nombre de carpeta",
+	"client_name": "Nombre de cliente",
+	"client_ip": "IP del cliente",
+	"action": "Acción",
+	"search": "Buscar"
+}
