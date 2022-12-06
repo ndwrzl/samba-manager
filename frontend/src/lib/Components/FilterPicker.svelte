@@ -4,6 +4,7 @@
 	import { getLog } from '$lib/api';
 	import { onMount, tick } from 'svelte';
 	import { state } from '$lib/state';
+	import { t } from '$lib/translations';
 
 	const ToCheck = ['share_name', 'client_name', 'client_ip', 'actions'] as const;
 	$: {
@@ -36,40 +37,43 @@
 
 <div class="filters flex justify-center my-5 flex-wrap">
 	<select bind:value={$filters.share_name}>
-		<option value={-1}>Share name</option>
+		<option value={-1}>{$t('dashboard.share_name')}</option>
 		{#each $filterData.share_name as filter, i}
 			<option value={i}>{filter}</option>
 		{/each}
 	</select>
 
 	<select bind:value={$filters.client_name}>
-		<option value={-1}>Client name</option>
+		<option value={-1}>{$t('dashboard.client_name')}</option>
 		{#each $filterData.client_name as filter, i}
 			<option value={i}>{filter}</option>
 		{/each}
 	</select>
 
 	<select bind:value={$filters.client_ip}>
-		<option value={-1}>Client IP</option>
+		<option value={-1}>{$t('dashboard.client_ip')}</option>
 		{#each $filterData.client_ip as filter, i}
 			<option value={i}>{filter}</option>
 		{/each}
 	</select>
 
 	<select bind:value={$filters.actions}>
-		<option value={-1}>Action</option>
+		<option value={-1}>{$t('dashboard.action')}</option>
 		{#each $filterData.actions as filter, i}
 			<option value={i}>{filter}</option>
 		{/each}
 	</select>
 
-	<input type="text" placeholder="Search" bind:value={$filters.search} />
+	<input type="text" placeholder={$t('dashboard.search')} bind:value={$filters.search} />
 </div>
 
-<style lang="sass">
-	.filters
-		select
-			@apply m-2 w-64 py-3 px-4 text-base rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500
-		input
-			@apply m-2 w-64 py-3 px-4 text-base rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500
+<style lang="scss">
+	.filters {
+		select {
+			@apply m-2 w-64 py-3 px-4 text-base rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500;
+		}
+		input {
+			@apply m-2 w-64 py-3 px-4 text-base rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500;
+		}
+	}
 </style>

@@ -1,9 +1,21 @@
 <script lang="ts">
 	import type { Log } from '$lib/logStore';
 	import { slide } from 'svelte/transition';
-	import { formatDistanceToNow, fromUnixTime } from 'date-fns';
+	import { formatDistanceToNow as formatDist, fromUnixTime } from 'date-fns';
+	// @ts-ignore
+	import { es, enUS, eu } from 'date-fns/locale/index';
 
-	const format = (x: number) => formatDistanceToNow(fromUnixTime(x));
+	import { locale } from '$lib/translations';
+
+	const locales = {
+		en: enUS,
+		es: es,
+		eu: eu
+	};
+
+	const format = (x: number) =>
+		// @ts-ignore
+		formatDist(fromUnixTime(x), { locale: locales[$locale], addSuffix: true });
 	export let event: Log;
 </script>
 
@@ -42,8 +54,8 @@
 		{/if}
 	</div>
 	<div class="date">
-		{format(event.date)} ago
-		<span class="ml-auto">{fromUnixTime(event.date).toLocaleString()}</span>
+		{format(event.date)} —
+		<span class="ml-auto">{fromUnixTime(event.date).toLocaleString($locale)}</span>
 	</div>
 </div>
 

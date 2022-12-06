@@ -1,10 +1,7 @@
-<script context="module">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
+	import '../app.scss';
 	import Loader from '$lib/Loader.svelte';
-	import '../app.css';
+	import '../app.postcss';
 	import { state, checkLogin } from '$lib/state';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
