@@ -13,7 +13,7 @@ Example
 [share]
 vfs objects = full_audit
 full_audit:prefix =[SMB AUDIT] %u|%I|%m|%S
-full_audit:success = connect disconnect open read renameat write unlinkat translate_name mkdirat
+full_audit:success = create_file connect disconnect open read renameat write unlinkat translate_name mkdirat
 full_audit:facility = LOCAL5
 full_audit:priority = notice
 ```
